@@ -1,0 +1,65 @@
+/* ============================================================
+   BASE & RESET
+   Global resets, typography, scrollbar.
+   Zero component styles.
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none !important;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size: 16px;             /* anchor for rem */
+}
+html::-webkit-scrollbar { display: none; }
+
+body {
+    background-color: var(--c-bg);
+    color: var(--c-text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: var(--fs-body);
+    line-height: var(--lh-normal);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* ---- Font families ---- */
+.font-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+}
+.font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+}
+
+/* ---- Element resets ---- */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: none !important;
+}
+ul, ol { list-style: none; }

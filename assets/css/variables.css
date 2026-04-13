@@ -1,0 +1,135 @@
+/* ============================================================
+   DESIGN TOKENS v2
+
+   Spacing: modular scale (base 8px, ratio 1.5)
+   Typography: fluid clamp() tested at 320–1920px
+   Palette: layered neutrals + cinnabar accent + gold luxury
+
+   Breakpoints reference (no media queries here, just clamp):
+     xs: 320px   (small phone)
+     sm: 375px   (iPhone)
+     md: 768px   (tablet portrait)
+     lg: 1024px  (tablet landscape)
+     xl: 1280px  (laptop)
+     2xl: 1440px (desktop)
+     3xl: 1920px (wide)
+   ============================================================ */
+
+:root {
+    /* ---- Palette: Neutrals (dark → light) ---- */
+    --c-black:        #0D0D0D;
+    --c-obsidian:     #141414;
+    --c-charcoal:     #1E1E1E;
+    --c-graphite:     #2A2A2A;
+    --c-slate:        #3D3D3D;
+    --c-ash:          #6B6B6B;
+    --c-stone:        #999999;
+    --c-fog:          #C4C0B8;
+    --c-cream:        #EDE9E0;
+    --c-parchment:    #F5F2EB;
+    --c-ivory:        #FAF8F4;
+
+    /* ---- Palette: Accent ---- */
+    --c-cinnabar:     #B5382A;     /* primary accent — Chinese vermillion */
+    --c-cinnabar-dim: #8C2B20;     /* hover / pressed */
+    --c-cinnabar-glow:#D4493A;     /* light variant for dark bg */
+    --c-gold:         #B8965A;     /* luxury secondary */
+    --c-gold-dim:     #967744;
+
+    /* ---- Palette: Semantic ---- */
+    --c-bg:           var(--c-obsidian);
+    --c-bg-elevated:  var(--c-charcoal);
+    --c-bg-surface:   var(--c-graphite);
+    --c-text:         var(--c-ivory);
+    --c-text-muted:   var(--c-stone);
+    --c-text-subtle:  var(--c-ash);
+    --c-accent:       var(--c-cinnabar);
+    --c-silk:         rgba(250, 248, 244, 0.35);
+
+    /* ---- Opacity tokens ---- */
+    --o-overlay-heavy:  0.85;
+    --o-overlay-medium: 0.55;
+    --o-overlay-light:  0.25;
+    --o-border:         0.08;
+    --o-border-hover:   0.2;
+
+    /* ---- Typography scale (fluid) ----
+       Formula: clamp(min, preferred, max)
+       min    = readable at 320px
+       prefer = scales with viewport
+       max    = capped at 1920px                  */
+    --fs-hero:      clamp(3rem,    9vw,   11rem);
+    --fs-display:   clamp(2.5rem,  6.5vw, 8rem);
+    --fs-heading:   clamp(2rem,    4.5vw, 4.5rem);
+    --fs-subhead:   clamp(1.5rem,  3vw,   2.5rem);
+    --fs-body:      clamp(0.875rem,0.95vw,1rem);
+    --fs-caption:   clamp(0.65rem, 0.7vw, 0.75rem);
+    --fs-micro:     clamp(0.55rem, 0.6vw, 0.65rem);
+
+    /* ---- Line heights ---- */
+    --lh-tight:   0.88;
+    --lh-snug:    1.1;
+    --lh-normal:  1.55;
+    --lh-loose:   2;
+
+    /* ---- Letter spacing ---- */
+    --ls-tight:   -0.04em;
+    --ls-normal:   0;
+    --ls-wide:     0.1em;
+    --ls-ultra:    0.25em;
+
+    /* ---- Spacing scale (8px base × 1.5 ratio) ----
+       4 → 6 → 8 → 12 → 16 → 24 → 32 → 48 → 64 → 96 → 128
+       Fluid versions use clamp for responsive               */
+    --sp-2xs:  0.25rem;   /*  4px */
+    --sp-xs:   0.375rem;  /*  6px */
+    --sp-sm:   0.5rem;    /*  8px */
+    --sp-md:   0.75rem;   /* 12px */
+    --sp-base: 1rem;      /* 16px */
+    --sp-lg:   1.5rem;    /* 24px */
+    --sp-xl:   2rem;      /* 32px */
+    --sp-2xl:  3rem;      /* 48px */
+    --sp-3xl:  4rem;      /* 64px */
+    --sp-4xl:  6rem;      /* 96px */
+    --sp-5xl:  8rem;      /* 128px */
+
+    /* Fluid spacing (responsive) */
+    --sp-section:  clamp(3rem,   7vw,  7rem);
+    --sp-block:    clamp(2rem,   4vw,  4rem);
+    --sp-element:  clamp(1rem,   2vw,  2rem);
+
+    /* ---- Page layout ---- */
+    --page-margin:  clamp(1.25rem, 5vw, 5rem);
+    --grid-gutter:  clamp(1rem,    2.5vw, 2.5rem);
+    --max-width:    1400px;
+    --nav-height:   clamp(3.5rem, 5vw, 5rem);
+
+    /* ---- Easing ---- */
+    --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart:  cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out:     cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* ---- Durations ---- */
+    --dur-instant:  0.15s;
+    --dur-fast:     0.3s;
+    --dur-normal:   0.6s;
+    --dur-slow:     1s;
+    --dur-cinematic:1.4s;
+
+    /* ---- Border radius ---- */
+    --r-sm:   0.375rem;
+    --r-md:   0.75rem;
+    --r-lg:   1rem;
+    --r-full: 100px;
+
+    /* ---- Z-index scale ---- */
+    --z-base:    1;
+    --z-content: 10;
+    --z-sticky:  20;
+    --z-nav:     50;
+    --z-overlay: 100;
+    --z-grain:   9000;
+    --z-cursor:  9500;
+    --z-loader:  10000;
+}

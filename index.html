@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seta & Silicio | China Luxury Tours</title>
+
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&q=80&w=2000">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+
+    <!-- Libraries -->
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ===================== LOADER ===================== -->
+    <div class="loader">
+        <span class="loader__count font-display">0</span>
+        <div class="loader__bar">
+            <div class="loader__bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- ===================== CURSOR ===================== -->
+    <div class="cursor cursor--dot">
+        <div class="cursor__dot"></div>
+    </div>
+    <div class="cursor cursor--ring">
+        <div class="cursor__ring"></div>
+    </div>
+
+    <!-- ===================== GRAIN ===================== -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- ===================== NAV ===================== -->
+    <nav class="nav font-mono">
+        <span class="nav__logo">Seta & Silicio.</span>
+        <div class="nav__links">
+            <a href="#" class="nav__link">Destinazioni</a>
+            <a href="#" class="nav__link">Esperienze</a>
+            <a href="#" class="nav__link">About</a>
+        </div>
+        <button class="btn-magnetic"><span>Prenota</span></button>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+        <div class="hero__bg">
+            <img src="https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&q=80&w=2000"
+                 srcset="https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&q=80&w=1000 1000w,
+                         https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&q=80&w=2000 2000w"
+                 sizes="100vw"
+                 alt="Montagne cinesi avvolte nella nebbia"
+                 fetchpriority="high">
+        </div>
+        <div class="hero__gradient"></div>
+
+        <div class="hero__content" id="hero-content">
+            <p class="hero__tag font-mono">2026 / 2027 Exclusives</p>
+
+            <h1 class="hero__title font-display">
+                <span class="line-reveal"><span class="line-reveal__inner">Oltre la</span></span>
+                <span class="line-reveal"><span class="line-reveal__inner" style="font-style:italic; color:var(--c-silk)">Muraglia</span></span>
+            </h1>
+
+            <div class="hero__cta">
+                <button class="btn-magnetic"><span>Scopri il viaggio</span></button>
+            </div>
+        </div>
+
+        <div class="hero__coords font-mono">
+            39.9042° N, 116.4074° E<br>Beijing / Pechino
+        </div>
+
+        <div class="hero__scroll-hint font-mono">
+            <span>Scroll</span>
+            <div class="hero__scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===================== MOSAIC ===================== -->
+    <section class="mosaic">
+        <div class="mosaic__images">
+            <!-- Top-left image -->
+            <div class="mosaic__img mosaic__img--tl">
+                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&q=80&w=600&h=800"
+                     alt="Città Proibita, Pechino" loading="lazy">
+                <span class="mosaic__label font-mono">Pechino</span>
+            </div>
+            <!-- Top-right image -->
+            <div class="mosaic__img mosaic__img--tr">
+                <img src="https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&q=80&w=600&h=750"
+                     alt="Grande Muraglia Cinese" loading="lazy">
+                <span class="mosaic__label font-mono">Grande Muraglia</span>
+            </div>
+            <!-- Bottom-left image -->
+            <div class="mosaic__img mosaic__img--bl">
+                <img src="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?auto=format&fit=crop&q=80&w=600&h=700"
+                     alt="Paesaggio fiume Li, Guilin" loading="lazy">
+                <span class="mosaic__label font-mono">Guilin</span>
+            </div>
+            <!-- Bottom-right image -->
+            <div class="mosaic__img mosaic__img--br">
+                <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&q=80&w=600&h=800"
+                     alt="Lanterne rosse tradizionali cinesi" loading="lazy">
+                <span class="mosaic__label font-mono">Shanghai</span>
+            </div>
+        </div>
+
+        <div class="mosaic__text">
+            <h2 class="mosaic__headline font-display">
+                Esperienze esclusive tra
+                <em>storia</em>
+                e innovazione lungo la
+                <em>Via della Seta</em>
+            </h2>
+        </div>
+    </section>
+
+    <!-- ===================== ITINERARIES ===================== -->
+    <section class="itineraries">
+        <div class="itineraries__pin">
+            <header class="itineraries__header">
+                <div class="itineraries__header-top">
+                    <div>
+                        <p class="itineraries__header-tag font-mono">Esperienze esclusive</p>
+                        <h2 class="itineraries__header-title font-display">I nostri itinerari</h2>
+                    </div>
+                    <div class="itineraries__counter font-mono">
+                        <span class="itineraries__counter-current">01</span>
+                        <span class="itineraries__counter-sep">/</span>
+                        <span class="itineraries__counter-total">04</span>
+                    </div>
+                </div>
+                <div class="itineraries__progress">
+                    <div class="itineraries__progress-fill"></div>
+                </div>
+            </header>
+
+            <div class="itineraries__track">
+                <!-- Card 01 -->
+                <article class="itineraries__card">
+                    <img class="itineraries__card-img"
+                         src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&q=80&w=1200"
+                         srcset="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&q=80&w=700 700w,
+                                 https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&q=80&w=1200 1200w"
+                         sizes="60vw" alt="Citta Proibita, Pechino" loading="lazy">
+                    <div class="itineraries__card-overlay">
+                        <div>
+                            <span class="itineraries__card-tag font-mono">01 — Cultura</span>
+                            <h3 class="itineraries__card-title font-display">I Segreti della<br>Citta Proibita</h3>
+                            <p class="itineraries__card-meta font-mono">da &euro;2.400 — 7 giorni</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 02 -->
+                <article class="itineraries__card">
+                    <img class="itineraries__card-img"
+                         src="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?auto=format&fit=crop&q=80&w=1200"
+                         srcset="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?auto=format&fit=crop&q=80&w=700 700w,
+                                 https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?auto=format&fit=crop&q=80&w=1200 1200w"
+                         sizes="60vw" alt="Fiume Li, Guilin" loading="lazy">
+                    <div class="itineraries__card-overlay">
+                        <div>
+                            <span class="itineraries__card-tag font-mono">02 — Natura</span>
+                            <h3 class="itineraries__card-title font-display">Riflessi sul<br>Fiume Li</h3>
+                            <p class="itineraries__card-meta font-mono">da &euro;1.950 — 5 giorni</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 03 -->
+                <article class="itineraries__card">
+                    <img class="itineraries__card-img"
+                         src="https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&q=80&w=1200"
+                         srcset="https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&q=80&w=700 700w,
+                                 https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&q=80&w=1200 1200w"
+                         sizes="60vw" alt="Grande Muraglia Cinese" loading="lazy">
+                    <div class="itineraries__card-overlay">
+                        <div>
+                            <span class="itineraries__card-tag font-mono">03 — Avventura</span>
+                            <h3 class="itineraries__card-title font-display">La Grande<br>Muraglia</h3>
+                            <p class="itineraries__card-meta font-mono">da &euro;3.100 — 10 giorni</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 04 -->
+                <article class="itineraries__card">
+                    <img class="itineraries__card-img"
+                         src="https://siviaggia.it/wp-content/uploads/sites/2/2022/10/tempio-del-cielo.jpeg"
+                         alt="Tempio del Cielo, Pechino" loading="lazy">
+                    <div class="itineraries__card-overlay">
+                        <div>
+                            <span class="itineraries__card-tag font-mono">04 — Spiritualita</span>
+                            <h3 class="itineraries__card-title font-display">Templi<br>Nascosti</h3>
+                            <p class="itineraries__card-meta font-mono">da &euro;2.800 — 8 giorni</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CINEMATIC ===================== -->
+    <section class="cinematic">
+        <div class="cinematic__bg">
+            <img src="https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&q=80&w=2000"
+                 srcset="https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&q=80&w=1000 1000w,
+                         https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&q=80&w=2000 2000w"
+                 sizes="100vw" alt="Vista panoramica della Cina" loading="lazy">
+        </div>
+        <div class="cinematic__overlay"></div>
+
+        <div class="cinematic__content" id="cinematic-content">
+            <p class="cinematic__tag font-mono">L'esperienza definitiva</p>
+            <h2 class="cinematic__title font-display">
+                <span class="line-reveal"><span class="line-reveal__inner">Un viaggio che</span></span>
+                <span class="line-reveal"><span class="line-reveal__inner" style="font-style:italic; color:var(--c-silk)">cambia tutto</span></span>
+            </h2>
+            <button class="btn-magnetic"><span>Prenota ora</span></button>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="footer__center">
+            <p class="footer__tag font-mono">Contatti</p>
+            <h2 class="footer__title font-display">
+                <span class="line-reveal"><span class="line-reveal__inner">Inizia il</span></span>
+                <span class="line-reveal"><span class="line-reveal__inner" style="font-style:italic; color:rgba(26,26,26,0.3)">viaggio.</span></span>
+            </h2>
+            <a href="#" class="btn-magnetic btn-magnetic--dark"><span>Contattaci subito</span></a>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__social font-mono">
+                <span>Instagram</span>
+                <span>WeChat</span>
+                <span>WhatsApp</span>
+            </div>
+            <p class="footer__copy font-mono">&copy; 2026 Seta & Silicio. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(python -m http.server 300)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(gh repo:*)",
+      "Bash(gh api:*)"
     ]
   }
 }

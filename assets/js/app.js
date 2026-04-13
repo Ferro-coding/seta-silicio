@@ -21,7 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // 2. Lenis smooth scroll ↔ GSAP sync
 const lenis = new Lenis({
-    lerp: 0.08,
+    lerp: 0.18,
     smoothWheel: true,
     wheelMultiplier: 1
 });
@@ -43,10 +43,15 @@ gsap.ticker.lagSmoothing(0);
 
     initAnimations();              // all scroll-driven work
 
-    // Recalc on resize (debounced)
+    // Recalc on resize — ignore mobile address bar show/hide
+    // (only triggers refresh when WIDTH changes, not height-only changes)
     let resizeTimer;
+    let lastWidth = window.innerWidth;
     window.addEventListener('resize', () => {
+        const newWidth = window.innerWidth;
+        if (newWidth === lastWidth) return; // height-only = address bar
+        lastWidth = newWidth;
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => ScrollTrigger.refresh(true), 200);
+        resizeTimer = setTimeout(() => ScrollTrigger.refresh(true), 250);
     });
 })();

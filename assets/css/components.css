@@ -49,8 +49,18 @@
 .cursor--hover .cursor__ring { opacity: 0; }
 
 /* Hide custom cursor on touch devices */
-@media (hover: none) {
-    .cursor { display: none; }
+@media (hover: none), (pointer: coarse) {
+    .cursor,
+    .cursor--dot,
+    .cursor--ring,
+    .cursor__dot,
+    .cursor__ring {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
     * { cursor: auto !important; }
 }
 

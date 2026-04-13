@@ -5,6 +5,9 @@
    ============================================================ */
 
 export function initCursor() {
+    // Skip on touch devices
+    if (matchMedia('(hover: none)').matches) return;
+
     const dot  = document.querySelector('.cursor--dot');
     const ring = document.querySelector('.cursor--ring');
     if (!dot || !ring) return;
